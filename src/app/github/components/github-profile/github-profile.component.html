@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Github Profile</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="ion-padding">
+        <ion-input formControlName="profile" placeholder="Digite um perfil válido do github"></ion-input>
+        <ion-button [disabled]="profileForm.invalid" type="submit">Pesquisar</ion-button>
+    </form>
+
+    <ion-item *ngIf="profile">
+        <ion-avatar slot="start">
+            <img [src]="profile.avatar_url" />
+        </ion-avatar>
+        <ion-label>
+            <h1>{{profile.name}}</h1>
+            <h2>{{profile.bio}}</h2>
+        </ion-label>
+    </ion-item>
+</ion-content>
