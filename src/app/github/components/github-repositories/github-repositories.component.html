@@ -5,4 +5,19 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-card *ngFor="let repository of repositories" 
+        [href]="repository.svn_url"
+        target="_blank"
+    >
+        <ion-card-header>
+            <ion-card-title>{{repository.name}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <span class="ion-padding"><ion-icon name="star"></ion-icon> {{repository.stargazers_count}}</span>
+            <span class="ion-padding"><ion-icon name="git-branch"></ion-icon> {{ repository.watchers_count}}</span>
+            <span class="ion-padding"><ion-icon name="eye"></ion-icon> {{repository.forks_count}}</span>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

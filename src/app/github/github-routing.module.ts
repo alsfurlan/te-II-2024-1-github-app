@@ -9,7 +9,7 @@ const routes: Routes = [
         component: GithubProfileComponent,
     },
     {
-        path: 'repositories',
+        path: 'repositories/:user',
         component: GithubRepositoriesComponent
     },
     {

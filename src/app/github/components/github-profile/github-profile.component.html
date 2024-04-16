@@ -10,7 +10,7 @@
         <ion-button [disabled]="profileForm.invalid" type="submit">Pesquisar</ion-button>
     </form>
 
-    <ion-item *ngIf="profile">
+    <ion-item *ngIf="profile" [routerLink]="['../repositories', profile.login]">
         <ion-avatar slot="start">
             <img [src]="profile.avatar_url" />
         </ion-avatar>
