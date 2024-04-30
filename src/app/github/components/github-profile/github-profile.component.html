@@ -10,13 +10,15 @@
         <ion-button [disabled]="profileForm.invalid" type="submit">Pesquisar</ion-button>
     </form>
 
-    <ion-item *ngIf="profile" [routerLink]="['../repositories', profile.login]">
+    <ion-item *ngIf="profile">
         <ion-avatar slot="start">
             <img [src]="profile.avatar_url" />
         </ion-avatar>
         <ion-label>
             <h1>{{profile.name}}</h1>
             <h2>{{profile.bio}}</h2>
+            <ion-button [routerLink]="['../repositories', profile.login]">Repositórios</ion-button>
+            <ion-button [routerLink]="['../followers', profile.login]">Seguidores</ion-button>
         </ion-label>
     </ion-item>
 </ion-content>

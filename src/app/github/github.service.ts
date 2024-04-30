@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Profile, Repository } from "./github.model";
+import { Follower, Profile, Repository } from "./github.model";
 
 @Injectable()
 export class GithubService {
@@ -20,5 +20,11 @@ export class GithubService {
         return this.httpClient.get<Repository[]>(`
         http://api.github.com/users/${profileName}/repos
         `)
+    }
+
+    getFollowers(login: string): Observable<Follower[]> {
+        return this.httpClient.get<Follower[]>(
+            `https://api.github.com/users/${login}/followers`
+        );
     }
 } 

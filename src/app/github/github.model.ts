@@ -1,3 +1,9 @@
+
+export type Follower = {
+    login: string;
+    avatar_url: string;
+}
+
 export type Profile = {
     login: string;
     avatar_url: string;

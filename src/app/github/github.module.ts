@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { GithubService } from "./github.service";
 import { CommonModule } from "@angular/common";
+import { GithubFollowersComponent } from "./components/github-followers/github-followers.component";
 
 @NgModule({
-    declarations: [GithubProfileComponent, GithubRepositoriesComponent],
+    declarations: [GithubProfileComponent, GithubRepositoriesComponent, GithubFollowersComponent],
     imports: [IonicModule, GithubRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule, CommonModule],
     providers: [GithubService]
 })

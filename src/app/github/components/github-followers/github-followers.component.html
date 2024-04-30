@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Github Followers</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+    
+    <ion-item *ngFor="let follower of followers">
+        <ion-avatar slot="start">
+            <img [src]="follower.avatar_url" />
+        </ion-avatar>
+        <ion-label>
+            <h1>{{follower.login}}</h1>
+            <ion-button [routerLink]="['../../repositories', follower.login]">Repositórios</ion-button>
+            <ion-button [routerLink]="['/github/followers', follower.login]">Seguidores</ion-button>
+        </ion-label>
+    </ion-item>
+</ion-content>
